@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJD Website User Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 2px solid #000;
+            min-height: 100vh;
+        }
+        
+        .page {
+            background-color: white;
+            margin: 20px auto;
+            padding: 30px;
+            border: 1px solid #000;
+            max-width: 800px;
+            position: relative;
+            min-height: 1000px;
+        }
+        
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            z-index: 1;
+            max-width: 400px;
+            max-height: 400px;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            color: #000;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .logo img {
+            max-width: 600px;
+            max-height: 400px;
+        }
+        
+        .highlight-yellow {
+            background-color: #ffff00;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        
+        .highlight-cyan {
+            background-color: #00ffff;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        
+        .highlight-pink {
+            background-color: #ffc0cb;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        
+        .highlight-green {
+            background-color: #90ee90;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        
+        .highlight-red {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .highlight-orange {
+            background-color: #ffa500;
+            padding: 5px 10px;
+        }
+        
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        
+        ul ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #000;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        .screenshot {
+            width: 100%;
+            max-width: 700px;
+            border: 2px solid #000;
+            margin: 20px 0;
+            display: block;
+        }
+        
+        .screenshot-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        
+        .screenshot-left {
+            flex: 1;
+        }
+        
+        .screenshot-right {
+            flex: 1;
+        }
+        
+        .screenshot-right img {
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid #000;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-weight: bold;
+        }
+        
+        .arrow {
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .red-circle {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .red-circle::after {
+            content: "🔴";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 20px;
+        }
+        
+        .red-arrow {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .yellow-ring {
+            background-color: #ffff00;
+            border: 3px solid #ff0000;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="content">
+            <h1>SJD WEBSITE USER GUIDE</h1>
+            
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop" alt="SJD Logo" />
+            </div>
+            
+            <div class="highlight-yellow">1. GENERAL WEBSITE OVERVIEW</div>
+            
+            <ul>
+                <li><strong>Website Name:</strong> SJD Gold & Diamonds</li>
+                <li><strong>Main Admin URL:</strong> https://admin.sjdgnd.com</li>
+                <li><strong>Purpose:</strong> E-commerce platform for jewelry sales and management</li>
+            </ul>
+            
+            <div class="highlight-yellow">2. LOGIN & CREDENTIALS for Admin</div>
+            
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Information</th>
+                </tr>
+                <tr>
+                    <td>Admin Login URL</td>
+                    <td>https://admin.sjdgnd.com/login</td>
+                </tr>
+                <tr>
+                    <td>Username Format</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Temporary Password</td>
+                    <td></td>
+                </tr>
+            </table>
+            
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="SJD Logo Watermark" class="watermark" />
+            
+            <p><strong>Login Steps:</strong></p>
+            <ol>
+                <li>Navigate to the admin login URL</li>
+                <li>Enter your username and password</li>
+                <li>Click the login button to access the dashboard</li>
+            </ol>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-left">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop" alt="Login Page Screenshot" class="screenshot" />
+                    <p><span class="red-arrow">✓</span> Username field</p>
+                    <p><span class="red-arrow">✓</span> Password field</p>
+                </div>
+                <div class="screenshot-right">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300&h=400&fit=crop" alt="Woman wearing jewelry" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=400&fit=crop" alt="Admin Dashboard Screenshot" class="screenshot" />
+            <p><em>Dashboard showing sidebar with "Dashboard", "Sales", etc., and stats cards (e.g., 817, 12509)</em></p>
+            
+            <div class="highlight-yellow">3. ADMIN MODULES & HOW TO USE THEM</div>
+            
+            <div class="highlight-cyan">3.1. Categories & Subcategories</div>
+            
+            <p class="highlight-red">Note: Every Data is fetched from software directly so you will have to create everything on software and control the display settings from website dashboard.</p>
+            
+            <ul>
+                <li><strong>Display Category:</strong>
+                    <ul>
+                        <li>Go to: Categories > Categories</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="SJD Logo Watermark" class="watermark" />
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page">
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Categories Table Screenshot" class="screenshot" />
+            <p><em>Categories table with columns like Name, Order Level, Icon, etc., with red highlights on some toggles</em></p>
+            <p>You can adjust the display settings for these categories.</p>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Category Edit Form Screenshot" class="screenshot" />
+            <p>You can also edit the category by changing its Ordering Number, Icon image and cover image etc.</p>
+            
+            <ul>
+                <li><strong>Display Subcategory:</strong>
+                    <ul>
+                        <li>Select Subcategory from Categories</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="page">
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Subcategories Table Screenshot" class="screenshot" />
+            <p><em>Subcategories table, similar to categories</em></p>
+            
+            <div class="highlight-yellow">
+                <ul>
+                    <li><strong>Edit/Delete Categories</strong>
+                        <ul>
+                            <li>Pick desire category > Edit or Delete</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Category Edit Form with Sub Category" class="screenshot" />
+            <p><em>Category edit form with red highlight on "Sub Category"</em></p>
+            
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="SJD Logo Watermark" class="watermark" />
+            
+            <div class="page-number">Page 5 of 28</div>
+        </div>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="page">
+        <div class="content">
+            <div class="highlight-cyan">3.2. Items / Products Management</div>
+            
+            <ul>
+                <li>Go to: Products > All Products</li>
+                <li>You can adjust the settings for particular item either making an item New Arrival or not.</li>
+                <li>Published means you will want those items to be displayed on website.</li>
+            </ul>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Products Table Screenshot" class="screenshot" />
+            <p><em>Products table with red highlight on sidebar "All Products"</em></p>
+            
+            <p class="highlight-yellow">You can edit that product to see what information of specific item is displayed on website (This can be modified from CSV file -JM).</p>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Product Edit Form Screenshot" class="screenshot" />
+            <p><em>Product edit form with red arrow pointing to fields</em></p>
+        </div>
+    </div>
+
+    <!-- Page 6 -->
+    <div class="page">
+        <div class="content">
+            <div class="highlight-cyan">3.3. Sales Information</div>
+            
+            <ul>
+                <li>Navigate: Sales > All Orders</li>
+            </ul>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Orders Table Screenshot" class="screenshot" />
+            <p><em>Orders table</em></p>
+            
+            <ul>
+                <li><strong>View:</strong> Order Code, No of products, Customer Name, Amount, delivery Status, Payment Status, Customer</li>
+                <li><strong>Export:</strong> PDF</li>
+                <li><strong>Filter:</strong> Date range, payment status and delivery status.</li>
+            </ul>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Filtered Orders Screenshot" class="screenshot" />
+            <p><em>Filtered orders with orange highlight on filter dropdown</em></p>
+            
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="SJD Logo Watermark" class="watermark" />
+        </div>
+    </div>
+
+    <!-- Page 7 -->
+    <div class="page">
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Orders Table with Bulk Action Screenshot" class="screenshot" />
+            <p><em>Orders table with orange bulk action</em></p>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Orders Table with Payment Status Screenshot" class="screenshot" />
+            <p><em>Similar table with red highlight on payment status</em></p>
+        </div>
+    </div>
+
+    <!-- Page 8 -->
+    <div class="page">
+        <div class="content">
+            <p class="arrow">➢ You can edit the status by clicking on View icon on right end of the window.</p>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Orders Table with View Icon Screenshot" class="screenshot" />
+            <p><em>Orders table with red circle on view icon</em></p>
+            
+            <p>And then you can see the window and edit the status.</p>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Order Details Page Screenshot" class="screenshot" />
+            <p><em>Order details page with red highlights on payment and delivery status dropdowns</em></p>
+            <div class="highlight-yellow">Yellow highlight to part of the screenshot</div>
+            
+            <div class="page-number">Page 9 of 28</div>
+        </div>
+    </div>
+
+    <!-- Page 9 -->
+    <div class="page">
+        <div class="content">
+            <div class="highlight-cyan">3.4. Customer List</div>
+            
+            <ul>
+                <li>Navigate: Customers > Customer list</li>
+                <li><strong>View:</strong> Name, Email, Phone.</li>
+                <li><strong>Actions:</strong> Verify the customer, Block the account and delete the account.</li>
+            </ul>
+            
+            <p class="highlight-red">Note: Approve the customer from the approved status toggle button</p>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Customer List Table Screenshot" class="screenshot" />
+            <p><em>Customer list table with red highlight on sidebar "Customer list"</em></p>
+            
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="SJD Logo Watermark" class="watermark" />
+            
+            <div class="page-number">Page 10 of 28</div>
+        </div>
+    </div>
+
+    <!-- Page 10 -->
+    <div class="page">
+        <div class="content">
+            <div class="highlight-cyan">3.5. Flyers & Feed Sheets</div>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Flyer Upload Form Screenshot" class="screenshot" />
+            <p><em>Flyer upload form with red arrows to "Name" and "Flyer image/PDF"</em></p>
+            
+            <ul>
+                <li>Upload PDF/Images of flyer and set the name for that particular flyer</li>
+            </ul>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Flyers List Screenshot" class="screenshot" />
+            <p><em>Flyers list with red arrow to sidebar "Flyer Dots"</em></p>
+            
+            <p>Once you upload the flyer you will see the list of flyers here. Now you have to add dots (description/data of that specific item used in flyer). Click on Flyer Dots.</p>
+        </div>
+    </div>
+
+    <!-- Page 11 -->
+    <div class="page">
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Flyer Dot Addition Screenshot" class="screenshot" />
+            <p><em>Flyer dot addition with red arrow to "Add Dot" and flyer image (yellow ring highlighted with red dot)</em></p>
+            
+            <p>Click on the item where you want to add dot, in my case I have clicked on left side <span class="yellow-ring"></span> (highlighted with red dot) once I clicked then description of item popped up you will have to copy complete description from JM Software <span class="highlight-yellow">(since this data is directly synchronized from software and paste it here).</span></p>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Pasted Description Screenshot" class="screenshot" />
+            <p><em>Screenshot with pasted description and red arrow to "Add Dot"</em></p>
+            
+            <p>Description is pasted and clicked on add dots. Now save the flyer.</p>
+        </div>
+    </div>
+
+    <!-- Page 12 -->
+    <div class="page">
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Flyer View Screenshot" class="screenshot" />
+            <p><em>Flyer view with red arrow to "View Feed"</em></p>
+            
+            <div class="highlight-pink">Integration process for customers</div>
+            
+            <div class="highlight-green">
+                <ul>
+                    <li><strong>Via Feed Sheet:</strong></li>
+                </ul>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=300&fit=crop" alt="Feed Sheet Page Screenshot" class="screenshot" />
+            <p><em>Feed sheet page with red arrow to sidebar "Feed Sheet" and orange button</em></p>
+            
+            <p>When you will click on feed sheet label you will see the window like above shared image, there will be a updated link for downloading a feed sheet dataset. This will include every necessary data related to our products. If you want to add more data in the file</p>
+        </div>
+    </div>
+</body>
+</html>
+

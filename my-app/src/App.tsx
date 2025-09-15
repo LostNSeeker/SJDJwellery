@@ -42,6 +42,9 @@ import ShippingPolicyPage from "../pages/ShippingPolicyPage";
 import ReturnPolicyPage from "../pages/ReturnPolicyPage";
 import PrivacyPolicyPage from "../pages/PrivacyPage";
 
+// User Guide page
+import UserGuide from "../pages/UserGuide";
+
 export default function App() {
   return (
     <Routes>
@@ -87,6 +90,9 @@ export default function App() {
       <Route path="/shipping-policy" element={<ShippingPolicyPage />} />
       <Route path="/return-policy" element={<ReturnPolicyPage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+
+      {/* User Guide page */}
+      <Route path="/user-guide" element={<UserGuide />} />
     </Routes>
   );
 }

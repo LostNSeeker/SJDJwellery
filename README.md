@@ -117,7 +117,7 @@ SJDjwellery/
 
 - **Backend API**: http://localhost:8000
 - **Frontend**: http://localhost:5173
-- **Admin Panel**: http://localhost:3002
+- **Admin Panel**: http://localhost:3000
 - **API Documentation**: http://localhost:8000/docs
 
 ## Default Credentials
