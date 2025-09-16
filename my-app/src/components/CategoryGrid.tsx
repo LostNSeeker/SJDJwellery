@@ -114,12 +114,12 @@ export default function CategoryGrid() {
               to={cat.href}
               className="group flex flex-col items-center space-y-3"
             >
-              {/* Circular Avatar */}
+              {/* Square Image */}
               <div className="relative">
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-20 h-20 rounded-full object-cover border-4 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-110 shadow-lg"
+                  className="w-24 h-24 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
                 />
               </div>
               {/* Text */}

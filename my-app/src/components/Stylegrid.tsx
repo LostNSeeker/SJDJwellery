@@ -34,12 +34,12 @@ export default function ShopByStyle(){
               to={cat.href}
               className="group flex flex-col items-center space-y-4"
             >
-              {/* Circular Avatar */}
+              {/* Square Image */}
               <div className="relative">
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-28 h-28 rounded-full object-cover border-4 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-110 shadow-lg"
+                  className="w-32 h-32 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
                 />
               </div>
               {/* Text */}

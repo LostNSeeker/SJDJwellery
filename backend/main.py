@@ -25,7 +25,16 @@ app = FastAPI(title="SJ Jewelry API", version="1.0.0")
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:5174"],  # React dev server
+    allow_origins=[
+        "http://localhost:5173", 
+        "http://localhost:5174", 
+        "http://localhost:5175", 
+        "http://localhost:5176", 
+        "http://localhost:5177", 
+        "http://localhost:3000", 
+        "http://localhost:3001", 
+        "http://localhost:3002"
+    ],  # React dev server ports
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

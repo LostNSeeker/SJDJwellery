@@ -1,13 +1,20 @@
-import ProductsPage from "../../src/components/ProductPage"; 
+import React from 'react';
+import HomepageHeader from '../../src/components/HomepageHeader';
+import Footer from '../../src/components/Footer';
+import ProductGrid from '../../src/components/ProductGrid';
 
 export default function Earrings() {
   return (
-    <ProductsPage
-      heroLine1="Earrings Collection"
-      heroLine2="Explore our elegant earrings from classic studs to statement pieces"
-      defaultExpandedFilter="material"
-      pageSize={8}
-      defaultFilters={{ category: ["earrings"] }}
-    />
+    <div className="flex flex-col min-h-screen">
+      {/* Homepage Header with Discount Bar and Navigation */}
+      <HomepageHeader />
+
+      {/* Main Content */}
+      <main className="flex-1">
+        <ProductGrid category="earrings" />
+      </main>
+
+      <Footer />
+    </div>
   );
 }

@@ -5,8 +5,25 @@ import { Search, Heart, ShoppingCart, User, Phone, Menu, X } from "lucide-react"
 import { useCartStore, useAuthStore, useSearchStore } from "../store/store";
 import Image from "./Image";
 import logo from "../assets/images/SJD_logo.png";
+import HorizontalFilterBar from "./HorizontalFilterBar";
 
-export default function Header() {
+interface SelectedFilters {
+  [key: string]: string[];
+}
+
+interface HeaderProps {
+  selectedFilters?: SelectedFilters;
+  onFilterChange?: (filters: SelectedFilters) => void;
+  onClearFilters?: () => void;
+  showFilters?: boolean;
+}
+
+export default function Header({ 
+  selectedFilters = {}, 
+  onFilterChange = () => {}, 
+  onClearFilters = () => {},
+  showFilters = false 
+}: HeaderProps) {
   const { searchQuery, setSearchQuery } = useSearchStore();
   const { getTotalItems } = useCartStore();
   const { isAuthenticated } = useAuthStore();
@@ -220,8 +237,109 @@ export default function Header() {
       </button>
     </form>
   </div>
-</header>
 
+  {/* Navigation Bar */}
+  <nav className="bg-white border-t border-gray-200">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="flex items-center justify-center space-x-8 py-3">
+        {/* Rings Dropdown */}
+        <div className="relative group">
+          <Link to="/categories/rings" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+            Rings
+          </Link>
+          <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="py-2">
+              <Link to="/categories/rings/engagement" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Engagement Rings</Link>
+              <Link to="/categories/rings/wedding" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Wedding Rings</Link>
+              <Link to="/categories/rings/fashion" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Fashion Rings</Link>
+              <Link to="/categories/rings/stackable" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Stackable Rings</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Necklaces Dropdown */}
+        <div className="relative group">
+          <Link to="/categories/necklaces" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+            Necklaces
+          </Link>
+          <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="py-2">
+              <Link to="/categories/necklaces/pendants" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Pendant Necklaces</Link>
+              <Link to="/categories/necklaces/chains" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Chain Necklaces</Link>
+              <Link to="/categories/necklaces/chokers" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Chokers</Link>
+              <Link to="/categories/necklaces/layered" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Layered Sets</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Earrings Dropdown */}
+        <div className="relative group">
+          <Link to="/categories/earrings" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+            Earrings
+          </Link>
+          <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="py-2">
+              <Link to="/categories/earrings/studs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Stud Earrings</Link>
+              <Link to="/categories/earrings/hoops" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Hoop Earrings</Link>
+              <Link to="/categories/earrings/drops" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Drop Earrings</Link>
+              <Link to="/categories/earrings/statement" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Statement Earrings</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Engagement Rings */}
+        <Link to="/categories/engagement-rings" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+          Engagement Rings
+        </Link>
+
+        {/* Wedding Rings */}
+        <Link to="/categories/wedding-rings" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+          Wedding Rings
+        </Link>
+
+        {/* Bracelets Dropdown */}
+        <div className="relative group">
+          <Link to="/categories/bracelets" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+            Bracelets
+          </Link>
+          <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="py-2">
+              <Link to="/categories/bracelets/tennis" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Tennis Bracelets</Link>
+              <Link to="/categories/bracelets/charm" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Charm Bracelets</Link>
+              <Link to="/categories/bracelets/bangles" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Bangles</Link>
+              <Link to="/categories/bracelets/cuff" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Cuff Bracelets</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Collections Dropdown */}
+        <div className="relative group">
+          <Link to="/collections" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+            Collections
+          </Link>
+          <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="py-2">
+              <Link to="/collections/diamond" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Diamond Collection</Link>
+              <Link to="/collections/gold" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Gold Collection</Link>
+              <Link to="/collections/vintage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Vintage Collection</Link>
+              <Link to="/collections/modern" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Modern Collection</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Gifts */}
+        <Link to="/gifts" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+          Gifts
+        </Link>
+
+        {/* The Edit */}
+        <Link to="/the-edit" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+          The Edit
+        </Link>
+      </div>
+    </div>
+  </nav>
+</header>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
@@ -314,22 +432,54 @@ export default function Header() {
               {/* Divider */}
               <div className="border-t border-gray-200 my-4" />
 
-              {/* Additional Mobile Links */}
-              <a
-                href="/categories"
+              {/* Navigation Links */}
+              <Link
+                to="/categories/rings"
                 className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className="font-medium">Browse Categories</span>
-              </a>
+                <span className="font-medium">Rings</span>
+              </Link>
 
-              <a
-                href="/about"
+              <Link
+                to="/categories/necklaces"
                 className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className="font-medium">About Us</span>
-              </a>
+                <span className="font-medium">Necklaces</span>
+              </Link>
+
+              <Link
+                to="/categories/earrings"
+                className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Earrings</span>
+              </Link>
+
+              <Link
+                to="/categories/engagement-rings"
+                className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Engagement Rings</span>
+              </Link>
+
+              <Link
+                to="/categories/wedding-rings"
+                className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Wedding Rings</span>
+              </Link>
+
+              <Link
+                to="/categories/bracelets"
+                className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Bracelets</span>
+              </Link>
             </nav>
 
             {/* Mobile Contact Info */}

@@ -1,13 +1,20 @@
-import ProductsPage from "../../src/components/ProductPage"; 
+import React from 'react';
+import HomepageHeader from '../../src/components/HomepageHeader';
+import Footer from '../../src/components/Footer';
+import ProductGrid from '../../src/components/ProductGrid';
 
 export default function NaturalDiamond() {
   return (
-    <ProductsPage
-      heroLine1="Natural Diamond Jewelry Collection"
-      heroLine2="Discover our exquisite collection of handcrafted natural diamond jewelry"
-      defaultExpandedFilter="category"
-      pageSize={8}
-      defaultFilters={{ material: ["natural_diamond"] }}
-    />
+    <div className="flex flex-col min-h-screen">
+      {/* Homepage Header with Discount Bar and Navigation */}
+      <HomepageHeader />
+
+      {/* Main Content */}
+      <main className="flex-1">
+        <ProductGrid material="natural_diamond" />
+      </main>
+
+      <Footer />
+    </div>
   );
 }
