@@ -66,37 +66,43 @@
 // }
 
 import { Link } from "react-router-dom";
+import RingImage from "../assets/images/Ring3.png";
+import PendantImage from "../assets/images/Pendant.png";
+import BraceletsImage from "../assets/images/Bracelets.png";
+import NecklaceImage from "../assets/images/Necklace.png";
+import EarringsImage from "../assets/images/Earrings.png";
+import AccessoriesImage from "../assets/images/Accessories.png";
 
 const categories = [
   { 
     name: "Rings", 
     href: "/categories/rings", 
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=200&h=200&fit=crop&crop=center"
+    image: RingImage
   },
   { 
     name: "Pendants", 
     href: "/categories/pendants", 
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&h=200&fit=crop&crop=center"
+    image: PendantImage
   },
   { 
     name: "Bangles/Bracelets", 
     href: "/categories/bangles_bracelets", 
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=200&h=200&fit=crop&crop=center"
+    image: BraceletsImage
   },
   { 
     name: "Necklaces", 
     href: "/categories/necklaces", 
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=200&h=200&fit=crop&crop=center"
+    image: NecklaceImage
   },
   { 
     name: "Earrings", 
     href: "/categories/earrings", 
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=200&h=200&fit=crop&crop=center"
+    image: EarringsImage
   },
   { 
     name: "Accessories", 
     href: "/categories/accessories", 
-    image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&h=200&fit=crop&crop=center"
+    image: AccessoriesImage
   },
 ];
 

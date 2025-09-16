@@ -54,24 +54,27 @@
 // };
 
 import { Link } from "react-router-dom";
+import NaturalDiamondImage from "../assets/images/Natural_diamond.png";
+import LabGrownDiamondImage from "../assets/images/Lab_grown_diamond.png";
+import PlainGoldImage from "../assets/images/Plain_gold_jewelry.png";
 
 const materialCategories = [
   { 
     id: 1, 
     name: 'Natural Diamond Jewelry', 
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=200&h=200&fit=crop&crop=center",
+    image: NaturalDiamondImage,
     href: '/material/natural_diamond'
   },
   { 
     id: 2, 
     name: 'Lab Grown Diamond Jewelry', 
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&h=200&fit=crop&crop=center',
+    image: LabGrownDiamondImage,
     href: '/material/lab_grown_diamond'
   },
   { 
     id: 3, 
     name: 'Plain Gold Jewelry', 
-    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=200&h=200&fit=crop&crop=center',
+    image: PlainGoldImage,
     href: '/material/plain_gold'
   },
 ];

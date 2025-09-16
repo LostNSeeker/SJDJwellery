@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import MenImage from "../assets/images/Men_jewelry.png";
+import WomenImage from "../assets/images/women_jewelry.png";
 
 type StyleCategory = {
   id: number;
@@ -11,13 +13,13 @@ const styleCategories: StyleCategory[] = [
   { 
     id: 1, 
     name: "Men", 
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+    image: MenImage,
     href: "/style/men"
   },
   { 
     id: 2, 
     name: "Women", 
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&h=200&fit=crop&crop=face",
+    image: WomenImage,
     href: "/style/women"
   },
 ];
