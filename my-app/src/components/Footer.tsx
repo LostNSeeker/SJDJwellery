@@ -1,5 +1,5 @@
 import Image from "./Image";
-import logo from "../assets/images/SJD_logo.png";
+import logo from "../assets/images/SJD_logo_PhotoGrid.png";
 import { useState } from "react";
 
 export default function Footer() {

@@ -29,7 +29,7 @@ export default function ShopByStyle(){
     <section className="mb-6">
       <h2 className="text-center text-xl font-semibold mb-6">SHOP BY STYLE</h2>
       <div className="flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
           {styleCategories.map((cat) => (
             <Link
               key={cat.id}
@@ -41,11 +41,11 @@ export default function ShopByStyle(){
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-44 h-44 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
+                  className="w-40 h-40 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
                 />
               </div>
               {/* Text */}
-              <span className="text-lg font-medium text-gray-700 text-center group-hover:text-gray-900 transition-colors duration-300">
+              <span className="text-sm font-medium text-gray-700 text-center group-hover:text-gray-900 transition-colors duration-300 leading-tight">
                 {cat.name}
               </span>
             </Link>
