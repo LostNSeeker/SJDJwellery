@@ -29,16 +29,17 @@ interface ProductGridProps {
   category?: string;
   material?: string;
   style?: string;
+  occasion?: string;
 }
 
-const ProductGrid: React.FC<ProductGridProps> = ({ category, material, style }) => {
+const ProductGrid: React.FC<ProductGridProps> = ({ category, material, style, occasion }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetchProducts();
-  }, [category, material, style]);
+  }, [category, material, style, occasion]);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -50,6 +51,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ category, material, style }) 
       if (category) params.append('category', category);
       if (material) params.append('material', material);
       if (style) params.append('style', style);
+      if (occasion) params.append('occasion', occasion);
 
       const response = await fetch(`http://localhost:8000/products/search?${params.toString()}`);
       

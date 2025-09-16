@@ -119,7 +119,7 @@ export default function CategoryGrid() {
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-24 h-24 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
+                  className="w-36 h-36 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
                 />
               </div>
               {/* Text */}

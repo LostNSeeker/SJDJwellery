@@ -93,7 +93,7 @@ export default function ShopByMaterial() {
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-28 h-28 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
+                  className="w-40 h-40 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
                 />
               </div>
               {/* Text */}
