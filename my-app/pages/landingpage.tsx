@@ -11,7 +11,7 @@ export default function landingpage() {
       <HomepageHeader />
 
       {/* Main Content */}
-      <main className="flex-1 bg-[#92bce03b]">
+      <main className="flex-1 bg-[#fafcff]">
         {/* Shop by Material and Style in same row */}
         <div className="px-4 md:px-6 pt-8 pb-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

@@ -123,11 +123,11 @@ export default function Header({
     </div>
 
     {/* Right: Search then icons - Responsive visibility */}
-    <div className="hidden md:flex items-center gap-2 lg:gap-3 flex-shrink-0">
+    <div className="hidden md:flex items-center gap-4 lg:gap-6 flex-shrink-0">
       {/* Search Bar - Hidden on smaller screens */}
       <form
         onSubmit={handleSearchSubmit}
-        className="hidden lg:flex items-center border border-gray-200 rounded-full ps-3 pe-2 py-1.5 bg-white/80 hover:bg-white transition-colors focus-within:ring-2 focus-within:ring-blue-200"
+        className="hidden lg:flex items-center border border-gray-200 rounded-full ps-3 pe-2 py-1.5 bg-white/80 hover:bg-white transition-colors focus-within:ring-2 focus-within:ring-blue-200 ml-4"
       >
         <Search size={16} className="text-gray-500" />
         <input
@@ -149,7 +149,7 @@ export default function Header({
       </form>
 
       {/* Icons: Contact, Wishlist, Cart, Account */}
-      <nav className="flex items-center gap-2 lg:gap-3 text-gray-700 text-sm font-medium">
+      <nav className="flex items-center gap-3 lg:gap-4 text-gray-700 text-sm font-medium">
         <Link
           to="/contact"
           className="hidden lg:flex items-center gap-1 hover:text-blue-600 transition-colors"
@@ -249,10 +249,10 @@ export default function Header({
           </Link>
           <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <div className="py-2">
-              <Link to="/categories/rings/engagement" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Engagement Rings</Link>
-              <Link to="/categories/rings/wedding" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Wedding Rings</Link>
-              <Link to="/categories/rings/fashion" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Fashion Rings</Link>
-              <Link to="/categories/rings/stackable" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Stackable Rings</Link>
+              <Link to="/categories/rings?occasion=engagement" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Engagement Rings</Link>
+              <Link to="/categories/rings?occasion=wedding" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Wedding Rings</Link>
+              <Link to="/categories/rings?occasion=casual" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Casual Rings</Link>
+              <Link to="/categories/rings?occasion=cocktail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Cocktail Rings</Link>
             </div>
           </div>
         </div>
@@ -264,10 +264,10 @@ export default function Header({
           </Link>
           <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <div className="py-2">
-              <Link to="/categories/necklaces/pendants" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Pendant Necklaces</Link>
-              <Link to="/categories/necklaces/chains" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Chain Necklaces</Link>
-              <Link to="/categories/necklaces/chokers" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Chokers</Link>
-              <Link to="/categories/necklaces/layered" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Layered Sets</Link>
+              <Link to="/categories/necklaces?occasion=formal" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Formal Necklaces</Link>
+              <Link to="/categories/necklaces?occasion=casual" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Casual Necklaces</Link>
+              <Link to="/categories/necklaces?occasion=luxury" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Luxury Necklaces</Link>
+              <Link to="/categories/necklaces?occasion=holiday" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Holiday Necklaces</Link>
             </div>
           </div>
         </div>
@@ -279,35 +279,35 @@ export default function Header({
           </Link>
           <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <div className="py-2">
-              <Link to="/categories/earrings/studs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Stud Earrings</Link>
-              <Link to="/categories/earrings/hoops" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Hoop Earrings</Link>
-              <Link to="/categories/earrings/drops" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Drop Earrings</Link>
-              <Link to="/categories/earrings/statement" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Statement Earrings</Link>
+              <Link to="/categories/earrings?occasion=formal" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Formal Earrings</Link>
+              <Link to="/categories/earrings?occasion=casual" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Casual Earrings</Link>
+              <Link to="/categories/earrings?occasion=spring" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Spring Earrings</Link>
+              <Link to="/categories/earrings?occasion=evening" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Evening Earrings</Link>
             </div>
           </div>
         </div>
 
         {/* Engagement Rings */}
-        <Link to="/categories/engagement-rings" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+        <Link to="/categories/rings?occasion=engagement" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
           Engagement Rings
         </Link>
 
         {/* Wedding Rings */}
-        <Link to="/categories/wedding-rings" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+        <Link to="/categories/rings?occasion=wedding" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
           Wedding Rings
         </Link>
 
         {/* Bracelets Dropdown */}
         <div className="relative group">
-          <Link to="/categories/bracelets" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
+          <Link to="/categories/bangles_bracelets" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors uppercase">
             Bracelets
           </Link>
           <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <div className="py-2">
-              <Link to="/categories/bracelets/tennis" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Tennis Bracelets</Link>
-              <Link to="/categories/bracelets/charm" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Charm Bracelets</Link>
-              <Link to="/categories/bracelets/bangles" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Bangles</Link>
-              <Link to="/categories/bracelets/cuff" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Cuff Bracelets</Link>
+              <Link to="/categories/bangles_bracelets?occasion=casual" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Casual Bracelets</Link>
+              <Link to="/categories/bangles_bracelets?occasion=formal" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Formal Bracelets</Link>
+              <Link to="/categories/bangles_bracelets?occasion=vintage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Vintage Bracelets</Link>
+              <Link to="/categories/bangles_bracelets?occasion=bohemian" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Bohemian Bracelets</Link>
             </div>
           </div>
         </div>
