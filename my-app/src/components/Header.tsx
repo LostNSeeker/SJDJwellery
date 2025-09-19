@@ -96,10 +96,10 @@ export default function Header({
       {/* Enhanced Sticky Header with Better Visual Appeal */}
       <header className="w-full sticky top-0 z-40 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/90 shadow-lg border-b border-gray-100">
         {/* Top Row: Contact Info, Logo, and User Actions */}
-        <div className="max-w-7xl mx-auto flex-1 ">
+        <div className="max-w-8xl mx-auto flex-1 ">
           <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 ">
             {/* Left: Contact Info - Hidden on smaller screens */}
-            <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
+            <div className="hidden lg:flex items-start gap-2 flex-shrink-0">
               <a
                 href="tel:+1234567890"
                 className="group inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors duration-200"

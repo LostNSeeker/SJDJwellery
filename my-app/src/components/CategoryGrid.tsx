@@ -20,7 +20,7 @@ const categories = [
 ];
 
 export default function CategoryGrid({ iconSize = "default" }: Props) {
-  const imgClass = "w-9 h-9";
+  const imgClass = "w-12 h-12";
   return (
     <section className="max-w-7xl mx-auto px-4 py-3 w-full">
       <span className="text-base font-semibold mb-2 block text-left">SHOP BY CATEGORIES</span>
