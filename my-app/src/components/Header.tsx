@@ -96,8 +96,8 @@ export default function Header({
       {/* Enhanced Sticky Header with Better Visual Appeal */}
       <header className="w-full sticky top-0 z-40 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/90 shadow-lg border-b border-gray-100">
         {/* Top Row: Contact Info, Logo, and User Actions */}
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+        <div className="max-w-7xl mx-auto flex-1 ">
+          <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 ">
             {/* Left: Contact Info - Hidden on smaller screens */}
             <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
               <a
@@ -122,11 +122,11 @@ export default function Header({
             </div>
 
             {/* Right: User Actions - Responsive Layout */}
-            <div className="flex items-center gap-3 lg:gap-4 flex-shrink-0">
+            <div className="flex items-center gap-4 lg:gap-4 flex-shrink-0 ">
               {/* Search Bar - Hidden on smaller screens */}
               <form
                 onSubmit={handleSearchSubmit}
-                className="hidden lg:flex items-center border border-gray-200 rounded-full ps-4 pe-3 py-2 bg-white/80 hover:bg-white hover:shadow-md transition-all duration-200 focus-within:ring-2 focus-within:ring-blue-200 focus-within:border-blue-300"
+                className="hidden lg:flex items-center border border-gray-200  ps-4 pe-3 py-2 bg-gray-100 hover:bg-white hover:shadow-md transition-all duration-200 focus-within:ring-2 focus-within:ring-blue-200 focus-within:border-blue-300 h-10"
               >
                 <Search size={16} className="text-gray-500" />
                 <input
@@ -138,23 +138,25 @@ export default function Header({
                   suppressHydrationWarning
                   aria-label="Search"
                 />
-                <button
+                {/* <button
                   type="submit"
                   className="ml-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs px-3 py-1.5 hover:from-blue-700 hover:to-blue-800 active:scale-95 transition-all duration-200 font-medium"
                   aria-label="Submit search"
                 >
                   Go
-                </button>
+                </button> */}
               </form>
 
               {/* Action Icons */}
-              <nav className="flex items-center gap-2 lg:gap-3">
+
+              
+              <nav className="flex items-center gap-4 lg:gap-3">
                 <Link
                   to="/wishlist"
                   className="p-2 text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-full transition-all duration-200 group"
                   title="Wishlist"
                 >
-                  <Heart size={18} className="group-hover:scale-110 transition-transform duration-200" />
+                  <Heart size={25} className="group-hover:scale-110 transition-transform duration-200" />
                 </Link>
 
                 <Link
@@ -162,7 +164,7 @@ export default function Header({
                   className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-200 group relative"
                   title="Shopping Cart"
                 >
-                  <ShoppingCart size={18} className="group-hover:scale-110 transition-transform duration-200" />
+                  <ShoppingCart size={25} className="group-hover:scale-110 transition-transform duration-200" />
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full h-5 min-w-[1.25rem] px-1 flex items-center justify-center leading-none font-medium">
                     {getTotalItems()}
                   </span>
@@ -174,7 +176,7 @@ export default function Header({
                     className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-200 group"
                     title="My Account"
                   >
-                    <User size={18} className="group-hover:scale-110 transition-transform duration-200" />
+                    <User size={25} className="group-hover:scale-110 transition-transform duration-200" />
                   </Link>
                 ) : (
                   <Link
@@ -182,10 +184,11 @@ export default function Header({
                     className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-200 group"
                     title="Login"
                   >
-                    <User size={18} className="group-hover:scale-110 transition-transform duration-200" />
+                    <User size={25} className="group-hover:scale-110 transition-transform duration-200" />
                   </Link>
                 )}
               </nav>
+              
 
               {/* Mobile menu button */}
               <button
@@ -216,70 +219,116 @@ export default function Header({
               suppressHydrationWarning
               aria-label="Search"
             />
-            <button
+            {/* <button
               type="submit"
               className="ml-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs px-3 py-1.5 hover:from-blue-700 hover:to-blue-800 active:scale-95 transition-all duration-200 font-medium"
               aria-label="Submit search"
             >
               Go
-            </button>
+            </button> */}
           </form>
         </div>
 
         {/* Enhanced Navigation Bar */}
-        <nav className="bg-white border-t border-gray-100 shadow-sm">
+        <nav className="bg-white border-t border-gray-100 shadow-sm relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center space-x-1 lg:space-x-2 xl:space-x-4 py-4">
               {/* Rings Dropdown */}
-              <div className="relative group">
+              <div className="relative group flex-1">
                 <Link 
                   to="/categories/rings" 
-                  className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                  className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide text-center"
                 >
                   Rings
                 </Link>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="py-3">
-                    <Link to="/categories/rings?occasion=engagement" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Engagement Rings</Link>
-                    <Link to="/categories/rings?occasion=wedding" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Wedding Rings</Link>
-                    <Link to="/categories/rings?occasion=casual" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Casual Rings</Link>
-                    <Link to="/categories/rings?occasion=cocktail" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Cocktail Rings</Link>
+                <div className="fixed left-0 right-0 top-[calc(100%+2px)] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <div className="mx-auto max-w-7xl px-4">
+                    <div className="bg-white rounded-b-2xl shadow-2xl border-t-4 border-gradient-to-r from-blue-400 via-pink-400 to-yellow-400 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <Link to="/categories/rings?occasion=engagement" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200 text-center">Engagement Rings</Link>
+                      <Link to="/categories/rings?occasion=wedding" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-lg transition-colors duration-200 text-center">Wedding Rings</Link>
+                      <Link to="/categories/rings?occasion=casual" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 rounded-lg transition-colors duration-200 text-center">Casual Rings</Link>
+                      <Link to="/categories/rings?occasion=cocktail" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-colors duration-200 text-center">Cocktail Rings</Link>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Necklaces Dropdown */}
-              <div className="relative group">
+              <div className="relative group flex-1">
                 <Link 
                   to="/categories/necklaces" 
-                  className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                  className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide text-center"
                 >
                   Necklaces
                 </Link>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="py-3">
-                    <Link to="/categories/necklaces?occasion=formal" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Formal Necklaces</Link>
-                    <Link to="/categories/necklaces?occasion=casual" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Casual Necklaces</Link>
-                    <Link to="/categories/necklaces?occasion=luxury" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Luxury Necklaces</Link>
-                    <Link to="/categories/necklaces?occasion=holiday" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Holiday Necklaces</Link>
+                <div className="fixed left-0 right-0 top-[calc(100%+2px)] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <div className="mx-auto max-w-7xl px-4">
+                    <div className="bg-white rounded-b-2xl shadow-2xl border-t-4 border-gradient-to-r from-pink-400 via-blue-400 to-yellow-400 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <Link to="/categories/necklaces?occasion=formal" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200 text-center">Formal Necklaces</Link>
+                      <Link to="/categories/necklaces?occasion=casual" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-lg transition-colors duration-200 text-center">Casual Necklaces</Link>
+                      <Link to="/categories/necklaces?occasion=luxury" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 rounded-lg transition-colors duration-200 text-center">Luxury Necklaces</Link>
+                      <Link to="/categories/necklaces?occasion=holiday" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-colors duration-200 text-center">Holiday Necklaces</Link>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Earrings Dropdown */}
-              <div className="relative group">
+              <div className="relative group flex-1">
                 <Link 
                   to="/categories/earrings" 
-                  className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                  className="px-3 py-2  text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
                 >
                   Earrings
                 </Link>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="py-3">
-                    <Link to="/categories/earrings?occasion=formal" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Formal Earrings</Link>
-                    <Link to="/categories/earrings?occasion=casual" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Casual Earrings</Link>
-                    <Link to="/categories/earrings?occasion=spring" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Spring Earrings</Link>
-                    <Link to="/categories/earrings?occasion=evening" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Evening Earrings</Link>
+                <div className="fixed left-0 right-0 top-[calc(100%+2px)] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <div className="mx-auto max-w-7xl px-4">
+                    <div className="bg-white rounded-b-2xl shadow-2xl border-t-4 border-gradient-to-r from-yellow-400 via-blue-400 to-pink-400 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <Link to="/categories/earrings?occasion=formal" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200 text-center">Formal Earrings</Link>
+                      <Link to="/categories/earrings?occasion=casual" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-lg transition-colors duration-200 text-center">Casual Earrings</Link>
+                      <Link to="/categories/earrings?occasion=spring" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 rounded-lg transition-colors duration-200 text-center">Spring Earrings</Link>
+                      <Link to="/categories/earrings?occasion=evening" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-colors duration-200 text-center">Evening Earrings</Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bracelets Dropdown */}
+              <div className="relative group flex-1">
+                <Link 
+                  to="/categories/bangles_bracelets" 
+                  className="px-3 py-2   text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                >
+                  Bracelets
+                </Link>
+                <div className="fixed left-0 right-0 top-[calc(100%+2px)] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <div className="mx-auto max-w-7xl px-4">
+                    <div className="bg-white rounded-b-2xl shadow-2xl border-t-4 border-gradient-to-r from-purple-400 via-yellow-400 to-blue-400 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <Link to="/categories/bangles_bracelets?occasion=casual" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200 text-center">Casual Bracelets</Link>
+                      <Link to="/categories/bangles_bracelets?occasion=formal" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-lg transition-colors duration-200 text-center">Formal Bracelets</Link>
+                      <Link to="/categories/bangles_bracelets?occasion=vintage" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 rounded-lg transition-colors duration-200 text-center">Vintage Bracelets</Link>
+                      <Link to="/categories/bangles_bracelets?occasion=bohemian" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-colors duration-200 text-center">Bohemian Bracelets</Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Collections Dropdown */}
+              <div className="relative group flex-1">
+                <Link 
+                  to="/collections" 
+                  className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                >
+                  Collections
+                </Link>
+                <div className="fixed left-0 right-0 top-[calc(100%+2px)] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <div className="mx-auto max-w-7xl px-4">
+                    <div className="bg-white rounded-b-2xl shadow-2xl border-t-4 border-gradient-to-r from-blue-400 via-yellow-400 to-pink-400 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <Link to="/collections/diamond" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200 text-center">Diamond Collection</Link>
+                      <Link to="/collections/gold" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-lg transition-colors duration-200 text-center">Gold Collection</Link>
+                      <Link to="/collections/vintage" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 rounded-lg transition-colors duration-200 text-center">Vintage Collection</Link>
+                      <Link to="/collections/modern" className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-colors duration-200 text-center">Modern Collection</Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -287,7 +336,7 @@ export default function Header({
               {/* Engagement Rings */}
               <Link 
                 to="/categories/rings?occasion=engagement" 
-                className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide flex-1"
               >
                 Engagement
               </Link>
@@ -295,51 +344,15 @@ export default function Header({
               {/* Wedding Rings */}
               <Link 
                 to="/categories/rings?occasion=wedding" 
-                className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                className="px-3   py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide flex-1 text-center"
               >
                 Wedding
               </Link>
 
-              {/* Bracelets Dropdown */}
-              <div className="relative group">
-                <Link 
-                  to="/categories/bangles_bracelets" 
-                  className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
-                >
-                  Bracelets
-                </Link>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="py-3">
-                    <Link to="/categories/bangles_bracelets?occasion=casual" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Casual Bracelets</Link>
-                    <Link to="/categories/bangles_bracelets?occasion=formal" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Formal Bracelets</Link>
-                    <Link to="/categories/bangles_bracelets?occasion=vintage" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Vintage Bracelets</Link>
-                    <Link to="/categories/bangles_bracelets?occasion=bohemian" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Bohemian Bracelets</Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Collections Dropdown */}
-              <div className="relative group">
-                <Link 
-                  to="/collections" 
-                  className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
-                >
-                  Collections
-                </Link>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="py-3">
-                    <Link to="/collections/diamond" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Diamond Collection</Link>
-                    <Link to="/collections/gold" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Gold Collection</Link>
-                    <Link to="/collections/vintage" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Vintage Collection</Link>
-                    <Link to="/collections/modern" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Modern Collection</Link>
-                  </div>
-                </div>
-              </div>
-
               {/* Gifts */}
               <Link 
                 to="/gifts" 
-                className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                className="px-3   py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide flex-1 text-center"
               >
                 Gifts
               </Link>
@@ -347,7 +360,7 @@ export default function Header({
               {/* The Edit */}
               <Link 
                 to="/the-edit" 
-                className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide"
+                className="px-3   py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 uppercase tracking-wide flex-1 text-center"
               >
                 The Edit
               </Link>
@@ -511,4 +524,3 @@ export default function Header({
     </>
   );
 }
-// 

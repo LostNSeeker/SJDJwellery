@@ -1,70 +1,3 @@
-// import { Link } from "react-router-dom";
-
-// const categories = [
-//   { 
-//     name: "Rings", 
-//     href: "/categories/rings", 
-//     image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop" 
-//   },
-//   { 
-//     name: "Pendants", 
-//     href: "/categories/pendants", 
-//     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop&crop=top" 
-//   },
-//   { 
-//     name: "Bangles/Bracelets", 
-//     href: "/categories/bangles_bracelets", 
-//     image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop" 
-//   },
-//   { 
-//     name: "Necklaces", 
-//     href: "/categories/necklaces", 
-//     image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop&crop=center" 
-//   },
-//   { 
-//     name: "Earrings", 
-//     href: "/categories/earrings", 
-//     image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop" 
-//   },
-//   { 
-//     name: "Accessories", 
-//     href: "/categories/accessories", 
-//     image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400&h=400&fit=crop&crop=center" 
-//   },
-// ];
-
-// export default function CategoryGrid() {
-//   return (
-//     <section className="max-w-7xl mx-auto px-4 py-6">
-//       <h2 className="text-xl font-semibold text-center mb-4">
-//         SHOP BY CATEGORIES
-//       </h2>
-//       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-//         {categories.map((cat) => (
-//           <Link
-//             key={cat.name}
-//             to={cat.href}
-//             className="group relative border rounded-lg overflow-hidden shadow hover:shadow-lg transition"
-//           >
-//             {/* Category Image */}
-//             <img
-//               src={cat.image}
-//               alt={cat.name}
-//               className="w-full h-32 object-cover group-hover:scale-105 transition-transform"
-//             />
-//             {/* Overlay */}
-//             <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-//               <span className="text-white text-sm font-medium">
-//                 {cat.name}
-//               </span>
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
 import { Link } from "react-router-dom";
 import RingImage from "../assets/images/Ring3.png";
 import PendantImage from "../assets/images/Pendant.png";
@@ -73,66 +6,50 @@ import NecklaceImage from "../assets/images/Necklace.png";
 import EarringsImage from "../assets/images/Earrings.png";
 import AccessoriesImage from "../assets/images/Accessories.png";
 
+type Props = {
+  iconSize?: "small" | "default";
+};
+
 const categories = [
-  { 
-    name: "Rings", 
-    href: "/categories/rings", 
-    image: RingImage
-  },
-  { 
-    name: "Pendants", 
-    href: "/categories/pendants", 
-    image: PendantImage
-  },
-  { 
-    name: "Bangles/Bracelets", 
-    href: "/categories/bangles_bracelets", 
-    image: BraceletsImage
-  },
-  { 
-    name: "Necklaces", 
-    href: "/categories/necklaces", 
-    image: NecklaceImage
-  },
-  { 
-    name: "Earrings", 
-    href: "/categories/earrings", 
-    image: EarringsImage
-  },
-  { 
-    name: "Accessories", 
-    href: "/categories/accessories", 
-    image: AccessoriesImage
-  },
+  { name: "Rings", href: "/categories/rings", image: RingImage },
+  { name: "Pendants", href: "/categories/pendants", image: PendantImage },
+  { name: "Bangles/Bracelets", href: "/categories/bangles_bracelets", image: BraceletsImage },
+  { name: "Necklaces", href: "/categories/necklaces", image: NecklaceImage },
+  { name: "Earrings", href: "/categories/earrings", image: EarringsImage },
+  { name: "Accessories", href: "/categories/accessories", image: AccessoriesImage },
 ];
 
-export default function CategoryGrid() {
+export default function CategoryGrid({ iconSize = "default" }: Props) {
+  const imgClass = "w-9 h-9";
   return (
-    <section className="max-w-7xl mx-auto px-4 py-6">
-      <h2 className="text-xl font-semibold text-center mb-8">
-        SHOP BY CATEGORIES
-      </h2>
-      <div className="flex justify-center">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-6xl">
+    <section className="max-w-7xl mx-auto px-4 py-3 w-full">
+      <span className="text-base font-semibold mb-2 block text-left">SHOP BY CATEGORIES</span>
+      <div className="flex justify-start w-full">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-[80%]">
           {categories.map((cat) => (
-            <Link
+            <div
               key={cat.name}
-              to={cat.href}
-              className="group flex flex-col items-center space-y-3"
+              className="flex flex-col items-center justify-center h-32 bg-white rounded-lg shadow-md p-3 space-y-2 w-full"
             >
-              {/* Square Image */}
-              <div className="relative">
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-36 h-36 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
-                />
-              </div>
-              {/* Text */}
-              <span className="text-sm font-medium text-gray-700 text-center group-hover:text-gray-900 transition-colors duration-300">
+              <img
+                src={cat.image}
+                alt={cat.name}
+                className={`${imgClass} rounded-full object-cover border border-gray-200 mb-1`}
+              />
+              <Link
+                to={cat.href}
+                className="text-xs font-bold text-gray-700 text-center hover:text-amber-600 transition"
+                style={{ minWidth: "70px", maxWidth: "110px", wordBreak: "break-word" }}
+              >
                 {cat.name}
-              </span>
-            </Link>
+              </Link>
+              <Link
+                to={cat.href}
+                className="mt-1 px-3 py-1 bg-amber-500 text-white rounded-full text-[10px] font-semibold hover:bg-amber-600 transition"
+              >
+                Shop Now
+              </Link>
+            </div>
           ))}
         </div>
       </div>

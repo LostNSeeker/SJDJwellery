@@ -6,26 +6,21 @@ import CategoryGrid from "../src/components/CategoryGrid";
 
 export default function landingpage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Homepage Header with Discount Bar and Navigation */}
+    // Responsive, single view, no scroll, column layout, flex-start, auto width, left/right margin
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <HomepageHeader />
-
-      {/* Main Content */}
-      <main className="flex-1 bg-[#fafcff]">
-        {/* Shop by Material and Style in same row */}
-        <div className="px-4 md:px-6 pt-8 pb-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <ShopByMaterial />
-            </div>
-            <div>
-              <ShopByStyle />
-            </div>
+      <main className="flex-1 bg-[#fafcff] flex flex-col justify-start items-start overflow-hidden">
+        {/* Stack grids column-wise, flex-start, left/right margin, auto width */}
+        <div className="w-full flex flex-col items-start" style={{ marginLeft: "10%", marginRight: "10%" }}>
+          <div className="w-full flex flex-col justify-start items-start mb-0.5" style={{ height: "22vh" }}>
+            <ShopByMaterial iconSize="small" />
           </div>
-        </div>
-        {/* Categories below */}
-        <div className="px-4 md:px-6 pb-8">
-          <CategoryGrid />
+          <div className="w-full flex flex-col justify-start items-start mb-0.5" style={{ height: "22vh" }}>
+            <ShopByStyle iconSize="small" />
+          </div>
+          <div className="w-full flex flex-col justify-start items-start mb-0.5" style={{ height: "22vh" }}>
+            <CategoryGrid iconSize="small" />
+          </div>
         </div>
       </main>
       <Footer />

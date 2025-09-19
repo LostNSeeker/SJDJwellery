@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import MenImage from "../assets/images/Men_jewelry.png";
 import WomenImage from "../assets/images/women_jewelry.png";
 
+type Props = {
+  iconSize?: "small" | "default";
+};
+
 type StyleCategory = {
   id: number;
   name: string;
@@ -10,45 +14,41 @@ type StyleCategory = {
 };
 
 const styleCategories: StyleCategory[] = [
-  { 
-    id: 1, 
-    name: "Men", 
-    image: MenImage,
-    href: "/style/men"
-  },
-  { 
-    id: 2, 
-    name: "Women", 
-    image: WomenImage,
-    href: "/style/women"
-  },
+  { id: 1, name: "Men", image: MenImage, href: "/style/men" },
+  { id: 2, name: "Women", image: WomenImage, href: "/style/women" },
 ];
 
-export default function ShopByStyle(){
+export default function ShopByStyle({ iconSize = "default" }: Props){
+  const imgClass = "w-9 h-9";
   return (
-    <section className="mb-6">
-      <h2 className="text-center text-xl font-semibold mb-6">SHOP BY STYLE</h2>
-      <div className="flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
+    <section className=" max-w-7xl mx-auto px-4 py-3 w-full">
+      <span className="text-base font-semibold mb-2 block text-left">SHOP BY STYLE</span>
+      <div className="flex justify-start w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-[80%]">
           {styleCategories.map((cat) => (
-            <Link
+            <div
               key={cat.id}
-              to={cat.href}
-              className="group flex flex-col items-center space-y-4"
+              className="flex flex-col items-center justify-center h-32 bg-white rounded-lg shadow-md p-3 space-y-2 w-full"
             >
-              {/* Square Image */}
-              <div className="relative">
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-40 h-40 rounded-lg object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-all duration-300 group-hover:scale-105 shadow-md"
-                />
-              </div>
-              {/* Text */}
-              <span className="text-sm font-medium text-gray-700 text-center group-hover:text-gray-900 transition-colors duration-300 leading-tight">
+              <img
+                src={cat.image}
+                alt={cat.name}
+                className={`${imgClass} rounded-full object-cover border border-gray-200 mb-1`}
+              />
+              <Link
+                to={cat.href}
+                className="text-xs font-bold text-gray-700 text-center hover:text-amber-600 transition"
+                style={{ minWidth: "70px", maxWidth: "110px", wordBreak: "break-word" }}
+              >
                 {cat.name}
-              </span>
-            </Link>
+              </Link>
+              <Link
+                to={cat.href}
+                className="mt-1 px-3 py-1 bg-amber-500 text-white rounded-full text-[10px] font-semibold hover:bg-amber-600 transition"
+              >
+                Shop Now
+              </Link>
+            </div>
           ))}
         </div>
       </div>
