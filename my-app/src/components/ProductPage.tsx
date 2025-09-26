@@ -1,6 +1,6 @@
 'use client';
-import React, { useState, useEffect, Suspense, lazy } from "react";
-import { ChevronLeft, ChevronRight, SlidersHorizontal } from "lucide-react";
+import { useState, useEffect, Suspense, lazy } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AdjustmentsHorizontalIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ProductCard } from "./Card";
 import Header from "./Header";
@@ -102,12 +102,13 @@ const fetchProductsApi = async (params: ApiParams): Promise<ApiResponse> => {
 export default function ProductsPage({
   heroLine1,
   heroLine2,
-  defaultExpandedFilter,
+  defaultExpandedFilter: _defaultExpandedFilter,
   pageSize = 12,
   defaultFilters = {}
 }: Props) {
   // State for sidebar, pagination, filters, data
   const [showFilters, setShowFilters] = useState(false);
+  const [showDesktopFilters, setShowDesktopFilters] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState<Product[]>([]);
@@ -239,30 +240,11 @@ export default function ProductsPage({
 
       {/* Main Content */}
       <main className="flex flex-col md:flex-row flex-1 bg-[#92bce03b]">
-        {/* Desktop Filters */}
-        <div className="w-full max-w-xs mx-auto bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden h-fit md:sticky md:top-6">
-          <Suspense
-            fallback={
-              <div className="animate-pulse space-y-3 p-6">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className="h-12 bg-gray-200 rounded-lg"></div>
-                ))}
-              </div>
-            }
-          >
-            <FilterPanel 
-              selectedFilters={selectedFilters}
-              onFilterChange={handleFilterChange}
-              onClearFilters={clearFilters}
-            />
-          </Suspense>
-        </div>
-
         {/* Main Content Area */}
         <div className="flex-1">
           {/* Hero section */}
           <section className="bg-white shadow">
-            <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6">
+            <div className="max-w-8xl mx-auto px-2 sm:px-4 py-6">
               <div className="text-sm text-gray-400 mb-3">
                 <span>Home</span> / <span>{heroLine1}</span>
               </div>
@@ -284,7 +266,7 @@ export default function ProductsPage({
               </div>
 
               {/* Pagination Buttons */}
-              <nav className="flex items-center gap-1">
+              <nav className="flex items-center gap-1 mt-2">
                 <button
                   className="p-2 rounded bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={currentPage === 1}
@@ -327,32 +309,71 @@ export default function ProductsPage({
               </div>
             </div>
 
-            {/* Products Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-              {loading
-                ? Array.from({ length: pageSize }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="animate-pulse bg-white rounded-lg min-h-[320px] border"
-                    />
-                  ))
-                : products.map(product => (
-                    <ProductCard key={product.id} {...product} />
-                  ))}
+            {/* Desktop toggle above products + filters row */}
+            <div className="hidden md:flex items-center justify-start mb-4">
+              <button
+                onClick={() => setShowDesktopFilters(!showDesktopFilters)}
+                className="px-3 py-2 text-sm rounded border bg-white hover:bg-gray-50"
+              >
+                {showDesktopFilters ? 'Hide Filters' : 'Show Filters'}
+              </button>
             </div>
 
-            {/* Load More or Pagination again */}
-            {currentPage < totalPages && (
-              <div className="flex justify-center mt-8">
-                <button
-                  className="px-8 py-2 rounded border bg-white shadow text-base font-semibold hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={currentPage === totalPages || loading}
-                  onClick={() => setCurrentPage(currentPage + 1)}
-                >
-                  {loading ? 'Loading...' : 'Load More'}
-                </button>
+            {/* Row: Products and Filters side by side (desktop) */}
+            <div className="md:flex md:gap-6">
+              {/* Desktop Filters Sidebar (left) */}
+              {showDesktopFilters && (
+                <div className="hidden md:block w-full max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden h-fit">
+                  <div className="p-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold">Filters</h3>
+                  </div>
+                  <Suspense
+                    fallback={
+                      <div className="animate-pulse space-y-3 p-6">
+                        {[1, 2, 3, 4, 5, 6].map((i) => (
+                          <div key={i} className="h-12 bg-gray-200 rounded-lg"></div>
+                        ))}
+                      </div>
+                    }
+                  >
+                    <FilterPanel 
+                      selectedFilters={selectedFilters}
+                      onFilterChange={handleFilterChange}
+                      onClearFilters={clearFilters}
+                    />
+                  </Suspense>
+                </div>
+              )}
+
+              {/* Products Grid */}
+              <div className="flex-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                  {loading
+                    ? Array.from({ length: pageSize }).map((_, i) => (
+                        <div
+                          key={i}
+                          className="animate-pulse bg-white rounded-lg min-h-[320px] border"
+                        />
+                      ))
+                    : products.map(product => (
+                        <ProductCard key={product.id} {...product} />
+                      ))}
+                </div>
+
+                {/* Load More or Pagination again */}
+                {currentPage < totalPages && (
+                  <div className="flex justify-center mt-8">
+                    <button
+                      className="px-8 py-2 rounded border bg-white shadow text-base font-semibold hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={currentPage === totalPages || loading}
+                      onClick={() => setCurrentPage(currentPage + 1)}
+                    >
+                      {loading ? 'Loading...' : 'Load More'}
+                    </button>
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </div>
         </div>
       </main>

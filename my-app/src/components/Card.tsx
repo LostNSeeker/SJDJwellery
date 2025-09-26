@@ -180,12 +180,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Section */}
-      <div className="relative aspect-square bg-gray-50 overflow-hidden">
+      <div className="relative w-full bg-gray-50 overflow-hidden">
+        <div className="pt-[100%]" />
         <img
           src={images[currentImageIndex]?.src}
           alt={images[currentImageIndex]?.alt}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          style={{ minHeight: 180 }}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           draggable={false}
         />
 
